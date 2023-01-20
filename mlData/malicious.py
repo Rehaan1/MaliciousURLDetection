@@ -4,10 +4,29 @@ from joblib import Parallel, delayed
 import joblib
 from urllib.parse import urlparse
 
-model = joblib.load('maliciousURLModelRandom.pkl')
+model = joblib.load('E:\VIT FILES\VIT Sem 6\Data  Mining\Project\Project\mlData\maliciousURLModelRandom.pkl')
 
 
 def check_if_malicious(url):
+    df = pd.DataFrame([url], columns=['url'])
+    # Create and Extract Attributes from URL
+    df = attribute_extraction(df)
+    # print(df.head())
+    df=df.drop(columns=['url'])
+    
+    print("---------------------------------------")
+    print("*************Analysing URL Status**************")
+    print("Please Wait..............")
+    print()
+    
+    # Predict if Malicious
+    result = model.predict(df)
+    if(result[0] == 0):
+        print("Decision: Malicious")
+    else:
+        print("Decision: Safe")
+
+def print_if_malicious(url):
     df = pd.DataFrame([url], columns=['url'])
     # Create and Extract Attributes from URL
     df = attribute_extraction(df)
@@ -105,5 +124,6 @@ def digit_to_char_ratio(string):
     digit_to_char_ratio = digit/letter
     return digit_to_char_ratio
 
-check_if_malicious("http://www.garage-pirenne.be/index.php?option=com_content&view=article&id=70&vsig70_0=15")
+# Uncomment only for testing
+# check_if_malicious("http://www.garage-pirenne.be/index.php?option=com_content&view=article&id=70&vsig70_0=15")
     

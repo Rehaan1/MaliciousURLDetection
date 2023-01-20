@@ -1,0 +1,22 @@
+{
+  "name": "malicious-url",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rehaan1/MaliciousURLDetection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rehaan1/MaliciousURLDetection/issues"
+  },
+  "homepage": "https://github.com/Rehaan1/MaliciousURLDetection#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
