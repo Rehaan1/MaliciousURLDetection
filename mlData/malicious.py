@@ -17,15 +17,9 @@ def check_if_malicious(url):
     # Predict if Malicious
     result = model.predict(df)
     if(result[0] == 0):
-        value = {
-            "Decision": "Malicious",
-        }
-        print(value)
+        print('{\"Decision\": \"Malicious\" }')
     else:
-        value = {
-            "Decision": "Safe",
-        }
-        print(value)
+        print('{\"Decision\": \"Safe\" }')
 
 def print_if_malicious(url):
     df = pd.DataFrame([url], columns=['url'])
@@ -42,7 +36,7 @@ def print_if_malicious(url):
     # Predict if Malicious
     result = model.predict(df)
     if(result[0] == 0):
-        print("Decision: Malicious")
+        print("Decision: Malicious,")
     else:
         print("Decision: Safe")
 
