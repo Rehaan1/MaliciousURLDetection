@@ -14,17 +14,18 @@ def check_if_malicious(url):
     # print(df.head())
     df=df.drop(columns=['url'])
     
-    print("---------------------------------------")
-    print("*************Analysing URL Status**************")
-    print("Please Wait..............")
-    print()
-    
     # Predict if Malicious
     result = model.predict(df)
     if(result[0] == 0):
-        print("Decision: Malicious")
+        value = {
+            "Decision": "Malicious",
+        }
+        print(value)
     else:
-        print("Decision: Safe")
+        value = {
+            "Decision": "Safe",
+        }
+        print(value)
 
 def print_if_malicious(url):
     df = pd.DataFrame([url], columns=['url'])
@@ -47,8 +48,8 @@ def print_if_malicious(url):
 
 def attribute_extraction(df: pd.DataFrame):
     
-    print("---------------------------------------")
-    print("Attribute Extraction in Process..............")
+    #print("---------------------------------------")
+    #print("Attribute Extraction in Process..............")
 
     # Count number of dots
     df['count .'] = df['url'].apply(lambda i: i.count('.'))
