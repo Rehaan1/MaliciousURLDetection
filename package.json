@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Rehaan1/MaliciousURLDetection#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2"
   }
 }
