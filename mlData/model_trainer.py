@@ -66,6 +66,9 @@ def attribute_extraction(df: pd.DataFrame):
     # Check for HTTP
     df['has_http'] = df['url'].apply(lambda i: 1 if 'http:' in i else 0)
 
+    # Check for HTTPS
+    df['has_https'] = df['url'].apply(lambda i: 1 if 'https:' in i else 0)
+
     # URL Based Checks
     df['path_length'] = df['url'].apply(lambda i: len(urlparse(i).path))
     df['host_length'] = df['url'].apply(lambda i: len(urlparse(i).netloc))
