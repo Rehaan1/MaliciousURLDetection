@@ -1,5 +1,5 @@
 FROM node:18
-RUN apt-get update || : && apt-get install python3 -y
+RUN apt-get update || : && apt-get install -y python3.6=3.6.9-1~18.04ubuntu1.4
 
 RUN apt install python3-pip -y
 RUN pip3 install pandas
