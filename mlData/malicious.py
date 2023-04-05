@@ -4,7 +4,7 @@ from joblib import Parallel, delayed
 import joblib
 from urllib.parse import urlparse
 
-model = joblib.load('E:\VIT FILES\VIT Sem 6\Data  Mining\Project\Project\mlData\maliciousURLModelRandom.pkl')
+model = joblib.load('.\mlData\maliciousURLModelRandom.pkl')
 
 
 def check_if_malicious(url):
