@@ -9,7 +9,7 @@ router.get('/',(req,res) => {
     var url = req.query.url;
 
     // spawn new child process to call the python script
-    const python = spawn('python', ['-c', 'import mlData.malicious as malicious; malicious.check_if_malicious("'+url+'")'])
+    const python = spawn('python3', ['-c', 'import mlData.malicious as malicious; malicious.check_if_malicious("'+url+'")'])
 
     // collect data from script
     python.stdout.on('data', (data) => {
