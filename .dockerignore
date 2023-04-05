@@ -1,0 +1,4 @@
+node_modules
+.env
+malicious_phish.csv
+model_trainer.py
