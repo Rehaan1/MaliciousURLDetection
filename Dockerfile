@@ -1,10 +1,7 @@
 FROM node:18-alpine
-RUN apt-get update || : && apt-get install python3 -y
 
-RUN apt install python3-pip -y
-RUN pip3 install pandas -y
-RUN pip3 install joblib -y
-RUN pip3 install -U scikit-learn==0.21.3 -y
+RUN apk update && apk add python3
+RUN apk add py3-pip && pip3 install pandas joblib && pip3 install -U scikit-learn==0.21.3
 
 ENV PORT=3000
 WORKDIR /app
